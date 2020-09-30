@@ -32,7 +32,7 @@ jobs:
         export ANDROID_SDK=$ANDROID_ROOT/sdk &&
         export ANDROID_NDK=$ANDROID_ROOT/ndk &&
         export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools &&
-        buildsystem/compile.sh -a armeabi-v7a &&
+        buildsystem/compile.sh &&
         gradle wrapper &&
         chmod +x ./gradlew &&
         ./gradlew build
