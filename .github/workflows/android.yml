@@ -33,6 +33,4 @@ jobs:
         export ANDROID_NDK=$ANDROID_ROOT/ndk &&
         export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools &&
         buildsystem/compile.sh &&
-        gradle wrapper &&
-        chmod +x ./gradlew &&
-        ./gradlew build
+        # gradle build &&
