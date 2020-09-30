@@ -18,6 +18,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Setup Gradle Wrapper
-      run: export ANDROID_SDK=/sdk && export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools
+      run: export ANDROID_SDK=/sdk && export ANDROID_NDK=/sdk && export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools
     - name: Build with Gradle
       run: buildsystem/compile.sh -a armeabi-v7a
