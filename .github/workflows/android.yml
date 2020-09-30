@@ -21,18 +21,17 @@ jobs:
     
     - name: Setup Dependencies for Compilation
       run:
-        sudo apt update
-        sudo apt install automake ant autopoint cmake build-essential libtool-bin \
+        sudo apt update && sudo apt install automake ant autopoint cmake build-essential libtool-bin \
         patch pkg-config protobuf-compiler ragel subversion unzip git \
         openjdk-8-jre openjdk-8-jdk flex python wget
     
     - name: Setup Script for VLC
       run:
-        export ANDROID_ROOT=/usr/local/lib/android
-        export ANDROID_SDK=$ANDROID_ROOT/sdk
-        export ANDROID_NDK=$ANDROID_ROOT/ndk
-        export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools
-        buildsystem/compile.sh -a armeabi-v7a
-        gradle wrapper
-        chmod +x ./gradlew
+        export ANDROID_ROOT=/usr/local/lib/android &&
+        export ANDROID_SDK=$ANDROID_ROOT/sdk &&
+        export ANDROID_NDK=$ANDROID_ROOT/ndk &&
+        export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools &&
+        buildsystem/compile.sh -a armeabi-v7a &&
+        gradle wrapper &&
+        chmod +x ./gradlew &&
         ./gradlew build
