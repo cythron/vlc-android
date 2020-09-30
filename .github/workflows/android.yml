@@ -32,5 +32,10 @@ jobs:
         export ANDROID_SDK=$ANDROID_ROOT/sdk &&
         export ANDROID_NDK=$ANDROID_ROOT/ndk &&
         export PATH=$PATH:$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools &&
-        buildsystem/compile.sh &&
+        buildsystem/compile.sh
         # gradle build &&
+        
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: artifacts/app.apk
