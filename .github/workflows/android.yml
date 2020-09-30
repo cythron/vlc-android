@@ -18,6 +18,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Setup Gradle Wrapper
-      run: ./gradle wrapper && chmod +x ./gradlew
+      run: gradle wrapper && chmod +x ./gradlew
     - name: Build with Gradle
       run: ./gradlew build
