@@ -2,7 +2,7 @@
 
 workflows:
     android-app:
-        name: Android App
+        name: VLC
         scripts:
             - ./gradlew assembleDebug
         artifacts:
